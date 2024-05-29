@@ -32,7 +32,7 @@ public class FolderService {
 
         folderRepository.saveAll(folderList);
     }
-    public List<FolderResponseDto> getFoldrs(User user) {
+    public List<FolderResponseDto> getFolders(User user) {
         List<Folder> folderList = folderRepository.findAllByUser(user);
         List<FolderResponseDto> responseDtoList = new ArrayList<>();
 
