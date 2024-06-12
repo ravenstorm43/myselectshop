@@ -44,8 +44,9 @@ public class KakaoService {
         User kakaoUser = registerKakaoUserIfNeeded(kakaoUserInfo);
 
         // 4. JWT 토킅 반환
-        jwtUtil.createToken(kakaoUser.getUsername(), kakaoUser.getRole());
-        return null;
+        String createToken = jwtUtil.createToken(kakaoUser.getUsername(), kakaoUser.getRole());
+
+        return createToken;
     }
     private String getToken(String code) throws JsonProcessingException {
         log.info("인가코드 : " + code);
